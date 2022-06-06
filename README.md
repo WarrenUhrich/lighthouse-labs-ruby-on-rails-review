@@ -1,2 +1,5 @@
-# lighthouse-labs-ruby-on-rails-review
-Lighthouse Labs "Ruby on Rails Review" lecture.
+# Lighthouse Labs | Rails Review
+
+* [ ] Rails - How is it so far?
+* [ ] MVC Review
+* [ ] Building an App Prototype
