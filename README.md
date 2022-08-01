@@ -38,3 +38,27 @@
 * Fun to learn a second language; many resources out there were better than Compass!
 * Interesting to inherit Jungle and update it
 
+## About Ruby on Rails
+
+### What is Rails?
+
+* Ruby Framework | Object-Oriented and Developer Friendly (1995)
+* (2005) Server-side rapid web application development framework
+* **MVC**
+  * Model: Representation of our data - ability to manipulate / read.
+  * View: Template for output we'll send to a client (web browser.)
+  * Controller: Bridges the model and view; ask for data, and send it to the view for formatting (any logic related to this.)
+* MVC is now EVERYWHERE:
+  * Python (Django)
+  * Node.js (Sails.js)
+  * Perl (Catalyst)
+  * Java (Spring)
+  * PHP (Laravel)
+  * C# (.NET Core MVC)
+* Ruby on Rails has been used in such apps as:
+  * GitHub
+  * AirBnB
+  * Shopify
+  * Twitter
+  * Basecamp
+* ActiveRecord ORM (Object-Relational Mapper)
