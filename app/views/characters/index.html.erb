@@ -1,0 +1,13 @@
+<h1>Characters List</h1>
+<ul>
+    <% @characters.each do |character| %>
+        <li>
+            <h2>
+                <%= character.name %>
+                (<%= character.race %>)
+                from <%= character.location.name %>
+            </h2>
+            <p><%= character.poem %></p>
+        </li>
+    <% end # End characters loop. %>
+</ul>
