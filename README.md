@@ -1,5 +1,7 @@
 # Lighthouse Labs | Rails Review
 
+[Download PDF Notes](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/raw/2022.08.01-web-ft-east-30may2022/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2022.08.01-web-ft-east-30may2022) | [Vimeo Video Recording](https://vimeo.com/735544550/1c7bcca28e)
+
 * [X] How is Rails so far?
 * [X] Ruby on Rails MVC Review
 * [X] Building an Application Prototype
