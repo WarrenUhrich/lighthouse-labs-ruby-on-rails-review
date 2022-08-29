@@ -1,0 +1,10 @@
+<h1>Zelda Characters</h1>
+<ul>
+    <% @characters.each do |character| %>
+        <li>
+            <%= character.name %>
+            is holding a(n)
+            <%= character.item %>
+        </li>
+    <% end %>
+</ul>
