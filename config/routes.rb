@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :characters, only: [:index]
+  resources :locations, only: [:index, :show]
 end
