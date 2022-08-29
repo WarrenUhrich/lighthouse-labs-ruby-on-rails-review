@@ -1,6 +1,6 @@
 # Lighthouse Labs | Rails Review
 
-[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2022.08.29-web-ft-east-27june2022) | [Vimeo Video Recording (Coming Soon!)](#coming-soon)
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2022.08.29-web-ft-east-27june2022) | [Vimeo Video Recording](https://vimeo.com/744268149/a4a42cb6ef)
 
 * [X] Rails - How is it so far?
 * [X] MVC Review
