@@ -6,33 +6,28 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Beginning seeding process..."
+puts "Generating Locations..."
 
-puts "Building cities..."
-
-12.times do
-    City.create(
-        name: Faker::Games::DnD.city,
-        language: Faker::Games::DnD.language
+10.times do
+    Location.create(
+        name: Faker::Fantasy::Tolkien.location
     )
 end
 
-puts "Cities standing tall!"
+puts "Locations are done generating."
 
-puts "Birthing monsters..."
+puts "Generating Characters..."
 
-all_cities = City.all
+locations = Location.all
 
 50.times do
-    Monster.create(
-        name: Faker::Games::DnD.monster,
-        melee_weapon: Faker::Games::DnD.melee_weapon,
-        ranged_weapon: Faker::Games::DnD.ranged_weapon,
-        level: rand(1..100),
-        city: all_cities.sample # Returns one random city
+    Character.create(
+        name: Faker::Fantasy::Tolkien.character,
+        favourite_poem: Faker::Fantasy::Tolkien.poem,
+        location: locations.sample
     )
 end
 
-puts "Monsters ready for combat!"
+puts "Done character generation."
 
-puts "Seeding complete."
+puts "Done seeding."
