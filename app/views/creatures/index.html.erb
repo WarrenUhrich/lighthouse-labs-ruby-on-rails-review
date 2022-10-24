@@ -1,0 +1,30 @@
+<h1>Creatures Index Page</h1>
+
+<ul>
+
+  <% @creatures.each do |creature| %>
+
+    <li>
+    
+      <dl>
+        <dt>Species</dt>
+        <dd><%= creature.species %></dd>
+
+        <dt>Full Name</dt>
+        <dd><%= creature.first_name + " " + creature.last_name %></dd>
+
+        <dt>Weapon</dt>
+        <dd><%= creature.weapon %></dd>
+
+        <dt>Jewelry</dt>
+        <dd><%= creature.jewelry %></dd>
+
+        <dt>Habitat</dt>
+        <dd><%= creature.city.name %> (<%= creature.city.region %>)</dd>
+      </dl>
+
+    </li>
+
+  <% end %>
+
+</ul>

@@ -1,0 +1,10 @@
+<h1>Cities Index Page</h1>
+
+<ul>
+  <% @cities.each do |city| %>
+    <li>
+      <%= city.name %>
+      (<%= city.region %>)
+    </li>
+  <% end # End the @cities loop %>
+</ul>
