@@ -1,6 +1,6 @@
 require "test_helper"
 
-class BookTest < ActiveSupport::TestCase
+class CharactersControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,13 @@
+<h1>Tolkien Characters</h1>
+
+<ul>
+    <% @characters.each do |character| %>
+        <li>
+            <h2><%= character.name %></h2>
+            <p>
+                <%= link_to "Find out where I'm from!", location_path(character.location) %>
+            </p>
+            <p><%= character.favourite_poem %></p>
+        </li>
+    <% end %>
+</ul>

@@ -1,16 +1,10 @@
 # Lighthouse Labs | Rails Review
 
-[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2022.11.21-web-ft-east-19sept2022) | [Vimeo Video Recording](https://vimeo.com/773456428/eb5e56cce1)
+[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Branch and Repository](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review) | [Vimeo Video Recording](https://vimeo.com/717584445/4a7dea3e02)
 
 * [X] Rails - How is it so far?
 * [X] MVC Review
 * [X] Building an App Prototype
-
-## How are things goin'? How do you like Rails and this Unit?
-
-* Enjoyin' it! Almost annoying / tedious at the start
-* Does a LOT for you!! ActiveRecord vs. pg library is night / day!
-* Similar (with no background in Rails) there is a LOT of magic—uncomfortable
 
 # What is Ruby on Rails?
 
@@ -114,3 +108,4 @@ Consider making [a cheatsheet](https://overapi.com/static/cs/RubyOnRails-Cheatsh
 
 * [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
 * [Ruby on Rails Scaffold Command](https://www.rubyguides.com/2020/03/rails-scaffolding/)
+
