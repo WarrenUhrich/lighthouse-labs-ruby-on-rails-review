@@ -12,29 +12,35 @@
 * Does a LOT for you!! ActiveRecord vs. pg library is night / day!
 * Similar (with no background in Rails) there is a LOT of magic—uncomfortable
 
-## Ruby on Rails
+# What is Ruby on Rails?
 
-Server-side rapid web application development framework written in Ruby!
+* Server-side, rapid, web application development framework
+* Written in Ruby
+* Follows the [Model View Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) MVC software design pattern
+* Favours [Convention over Configuration (CoC)](https://en.wikipedia.org/wiki/Convention_over_configuration)
+* Believes in DRY Code ([Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
+* Incorporates the [Active Record pattern](https://en.wikipedia.org/wiki/Active_record_pattern) ([ORM](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping))
+* A game-changer in the industry, inspiring countless MVC heavy-weights in many languages:
+  * [Django](https://www.djangoproject.com/) ([Python](https://www.python.org/))
+  * [Catalyst](http://catalyst.perl.org/) ([Perl](https://www.perl.org/))
+  * [Laravel](https://laravel.com/) ([PHP](https://www.php.net/))
+  * [Sails.js](https://sailsjs.com/) ([node.js](https://nodejs.org/en/))
 
-* Convention over configuration library.
-* DRY principles incorporated
-* ORM (Object Relational Mapper) - ActiveRecord
+## Model View Controller (MVC)
 
-What does Ruby on Rails solve?
+### Models
 
-* Build apps very very quickly
-* Build apps efficiently as a team
-* Using the terminal to create consistent DRY code
-* It standardized use of MVC in web development
+Represent our data, working with Active Record to help us interact with it.
 
-Rails inspired MVC frameworks in every popular language...
+### Controllers
 
-* C# - .NET Core MVC Framework
-* Python - Django
-* Node.js - Sails.js
-* PHP - Laravel
+The brain of our apps, we use them for business logic! Call upon models for necessary information, applying and sorting or formatting necessary for output.
 
-## MVC
+### Views
+
+Output for the app (usually in a popular format like HTML, XML, JSON) to be sent to a client program (usually a web browser or script.) Usually incorporates use of a tempalating engine like [ERB](https://github.com/ruby/erb).
+
+## Get Familiar with the Docs
 
 Forgot how to get started with Rails? [There's docs for that](https://guides.rubyonrails.org/getting_started.html)! In fact, for most common questions you'll have, there will information in the documentation. On that very page, linked to, there is a set of chapters that cover most of what you'd need to get started.
 
@@ -108,4 +114,3 @@ Consider making [a cheatsheet](https://overapi.com/static/cs/RubyOnRails-Cheatsh
 
 * [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
 * [Ruby on Rails Scaffold Command](https://www.rubyguides.com/2020/03/rails-scaffolding/)
-
