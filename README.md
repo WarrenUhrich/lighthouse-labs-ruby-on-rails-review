@@ -3,10 +3,10 @@
 [PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2022.11.21-web-ft-east-19sept2022) | [Vimeo Video Recording](https://vimeo.com/773456428/eb5e56cce1)
 
 * [X] Rails - How is it so far?
-* [ ] MVC Review
-* [ ] Building an App Prototype
+* [X] MVC Review
+* [X] Building an App Prototype
 
-# What is Ruby on Rails?
+# How is Ruby on Rails goin'?
 
 * Enjoyin' it! Almost annoying / tedious at the start
 * Does a LOT for you!! ActiveRecord vs. pg library is night / day!
