@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Beginning seed process."
+
+puts "Birthing authors..."
+
+10.times do
+    Author.create(name: Faker::Book.author)
+end
+
+puts "Our authors are born."
+
+puts "Writing books..."
+
+all_authors = Author.all
+
+30.times do
+    Book.create(
+        title: Faker::Book.title,
+        genre: Faker::Book.genre,
+        author: all_authors.sample
+    )
+end
+
+puts "Books published!"
+
+puts "Seeding complete!"
