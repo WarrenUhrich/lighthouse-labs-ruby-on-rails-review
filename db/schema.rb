@@ -10,21 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_06_153200) do
-  create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.string "favourite_poem"
-    t.integer "location_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_characters_on_location_id"
-  end
-
-  create_table "locations", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_01_03_191418) do
+  create_table "queens", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "characters", "locations"
+  create_table "quotes", force: :cascade do |t|
+    t.string "text"
+    t.integer "queen_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["queen_id"], name: "index_quotes_on_queen_id"
+  end
+
+  add_foreign_key "quotes", "queens"
 end

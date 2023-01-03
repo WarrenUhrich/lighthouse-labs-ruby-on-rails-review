@@ -1,0 +1,14 @@
+<h1>Queens Index</h1>
+
+<ul>
+    <% @queens.each do |queen| %>
+        <li>
+            <%= queen.name %>
+            <ul>
+                <% queen.quotes.each do |quote| %>
+                    <li><%= quote.text %></li>
+                <% end %>
+            </ul>
+        </li>
+    <% end %>
+</ul>

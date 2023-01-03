@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Generating Locations..."
+puts "Beginning seeding process"
 
-10.times do
-    Location.create(
-        name: Faker::Fantasy::Tolkien.location
+puts "Placing crowns on queens..."
+
+25.times do
+    Queen.create(name: Faker::TvShows::RuPaul.queen)
+end
+
+puts "Royalty present!"
+
+puts "Preparing quotes..."
+
+queen_array = Queen.all
+# random_queen = queen_array.sample
+
+75.times do
+    Quote.create(
+        text: Faker::TvShows::RuPaul.quote,
+        queen: queen_array.sample
     )
 end
 
-puts "Locations are done generating."
+puts "Quotes done!"
 
-puts "Generating Characters..."
-
-locations = Location.all
-
-50.times do
-    Character.create(
-        name: Faker::Fantasy::Tolkien.character,
-        favourite_poem: Faker::Fantasy::Tolkien.poem,
-        location: locations.sample
-    )
-end
-
-puts "Done character generation."
-
-puts "Done seeding."
+puts "Seeding complete!"

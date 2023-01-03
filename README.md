@@ -1,12 +1,22 @@
 # Lighthouse Labs | Rails Review
 
-[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Branch and Repository](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review) | [Vimeo Video Recording](https://vimeo.com/717584445/4a7dea3e02)
+[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2023.01.03-web-flex-day-11july2022) | [Vimeo Video Recording](https://vimeo.com/786093475/98f72099c7)
 
 * [X] Rails - How is it so far?
 * [X] MVC Review
 * [X] Building an App Prototype
 
-# What is Ruby on Rails?
+## How is Ruby on Rails goin'?
+
+* Ruby?
+  * Syntax is a bit confusing
+* Rails?
+  * Dislike and like for automagical approach
+* How this unit operates a bit more independently?
+  * A bit overwhelming in presentation
+  * Hard to follow with less "hand-holding"
+
+## What is Ruby on Rails?
 
 * Server-side, rapid, web application development framework
 * Written in Ruby
@@ -108,4 +118,3 @@ Consider making [a cheatsheet](https://overapi.com/static/cs/RubyOnRails-Cheatsh
 
 * [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html)
 * [Ruby on Rails Scaffold Command](https://www.rubyguides.com/2020/03/rails-scaffolding/)
-
