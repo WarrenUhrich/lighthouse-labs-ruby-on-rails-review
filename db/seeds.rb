@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Beginning seeding process..."
+
+puts "Creating locations..."
+
+10.times do
+    Location.create(
+        city: Faker::TvShows::GameOfThrones.city,
+        house: Faker::TvShows::GameOfThrones.house
+    )
+end
+
+puts "Locations created."
+
+puts "Creating characters..."
+
+all_locations = Location.all
+
+30.times do
+    Character.create(
+        name: Faker::TvShows::GameOfThrones.character,
+        quote: Faker::TvShows::GameOfThrones.quote,
+        location: all_locations.sample
+    )
+end
+
+puts "Characters created."

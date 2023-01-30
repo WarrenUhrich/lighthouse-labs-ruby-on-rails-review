@@ -1,0 +1,10 @@
+<h1>Characters Index</h1>
+
+<ul>
+    <% @characters.each do |character| %>
+        <li>
+            <%= character.name %>
+            (<%= character.location.city %>)
+        </li>
+    <% end %>
+</ul>
