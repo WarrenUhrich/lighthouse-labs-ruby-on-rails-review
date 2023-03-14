@@ -1,0 +1,12 @@
+<h1><%= @character.name %></h1>
+
+<nav><%= link_to "Return to Spells", spells_path %></nav>
+
+<p>
+    <%= @character.quote %>
+</p>
+
+<p>
+    I know the spell:
+    <%= @character.spell.name %>
+</p>

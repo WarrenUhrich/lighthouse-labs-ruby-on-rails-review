@@ -3,4 +3,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :spells, only: [:index]
+  # index  GET    /spells/
+  # show   GET    /spells/:id
+  # update PUT    /spells/:id
+  # edit   GET    /spells/edit/:id
+  # delete DELETE /spells/:id
+  # create POST   /spells
+  # new    GET    /spells/new
+
+  resources :characters, only: [:show]
+  # show GET /characters/:id
 end

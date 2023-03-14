@@ -1,0 +1,26 @@
+<h1>Spells</h1>
+
+<ul>
+
+    <% @spells.each do |spell| %>
+
+        <li>
+            <%= spell.name %>
+
+            <ul>
+
+                <% spell.characters.each do |character| %>
+
+                    <li>
+                        <%= link_to character.name, character_path(character) %>
+                    </li>
+
+                <% end %>
+
+            </ul>
+
+        </li>
+
+    <% end %>
+
+</ul>
