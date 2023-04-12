@@ -1,0 +1,27 @@
+<h1>Future Dates</h1>
+
+<ul>
+
+    <% @future_dates.each do |future_date| %>
+
+        <li>
+            <h2><%= future_date.date %></h2>
+
+            <ul>
+            
+                <% future_date.characters.each do |character| %>
+            
+                    <li>
+                        <%= link_to character.name, character_path(character) %>
+                    </li>
+
+                <% end %>
+
+            </ul>
+
+        </li>
+
+    <% end %>
+
+</ul>
+
