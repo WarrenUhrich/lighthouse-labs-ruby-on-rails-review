@@ -1,6 +1,6 @@
 # Lighthouse Labs | Rails Review
 
-[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2023.07.04-web-flex-eve-23jan2023)
+[PDF Walkthrough Guide](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/blob/main/Ruby%20on%20Rails%20Review.pdf) | [GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2023.07.04-web-flex-eve-23jan2023) | [Vimeo Video Recording](https://vimeo.com/842360776/88a1a8fa70?share=copy)
 
 * [X] Rails - How is it so far?
 * [X] MVC Review
