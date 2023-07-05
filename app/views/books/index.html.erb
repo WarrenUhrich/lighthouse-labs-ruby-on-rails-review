@@ -1,0 +1,26 @@
+<h1>Books Index</h1>
+
+<ul>
+
+  <% @books.each do |book| %>
+
+    <li>
+    
+      <h2><%= book.title %></h2>
+
+      <dl>
+        <dt>Publisher</dt>
+        <dd><%= book.publisher %></dd>
+        <dt>Genre</dt>
+        <dd><%= book.genre %></dd>
+        <dt>Author</dt>
+        <dd>
+          <%= link_to book.author.name, author_path(book.author) %>
+        </dd>
+      </dl>
+    
+    </li>
+
+  <% end %>
+
+</ul>

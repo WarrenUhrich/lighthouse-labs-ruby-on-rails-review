@@ -1,0 +1,24 @@
+<h1>Show Author</h1>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @author.name %></dd>
+  <dt>Age</dt>
+  <dd><%= @author.age %></dd>
+  <dt>Address</dt>
+  <dd><%= @author.address %></dd>
+  <dt>Books</dt>
+  <dd>
+    <ul>
+      <% @author.books.each do |book| %>
+
+        <li>
+          <%= book.title %>
+        </li>
+
+      <% end %>
+    </ul>
+  </dd>
+</dl>
+
+<%= link_to 'All Books', books_path %>
