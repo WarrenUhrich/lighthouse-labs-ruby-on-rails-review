@@ -1,0 +1,27 @@
+<h1>Teams Index</h1>
+
+<ul>
+
+  <% @teams.each do |team| %>
+
+    <li>
+      <%= team.name %> (<%= team.coach %>)
+
+      <ul>
+
+        <% team.players.each do |player| %>
+        
+          <li>
+
+            <%= link_to player.name, player_path(player) %>
+
+          </li>
+
+        <% end %>
+
+      </ul>
+    </li>
+
+  <% end %>
+
+</ul>
