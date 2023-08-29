@@ -1,0 +1,14 @@
+<h1>Cat Show</h1>
+
+<nav>
+  <%= link_to "Back to Registries", registries_path %>
+</nav>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @cat.name %></dd>
+  <dt>Breed</dt>
+  <dd><%= @cat.breed %></dd>
+  <dt>Registry</dt>
+  <dd><%= @cat.registry.name %></dd>
+</dl>
