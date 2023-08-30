@@ -5,29 +5,3 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-puts "Beginning seeding process!"
-
-puts "Seeding registries..."
-
-5.times do
-  Registry.create(name: Faker::Creature::Cat.registry)
-end
-
-puts "Registries added!"
-
-puts "Seeding cats..."
-
-all_registries = Registry.all
-
-25.times do
-  Cat.create(
-    name: Faker::Creature::Cat.name,
-    breed: Faker::Creature::Cat.breed,
-    registry: all_registries.sample
-  )
-end
-
-puts "Cats added!"
-
-puts "Seeding complete!"
