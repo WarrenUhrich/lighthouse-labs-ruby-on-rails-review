@@ -1,0 +1,18 @@
+<h1>Character Show</h1>
+
+<nav>
+  <%= link_to "Back to Locations", locations_path %>
+</nav>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @character.name %></dd>
+  <dt>Quote</dt>
+  <dd><%= @character.quote %></dd>
+  <dt>House</dt>
+  <dd><%= @character.house %></dd>
+  <dt>Spell</dt>
+  <dd><%= @character.spell %></dd>
+  <dt>Location</dt>
+  <dd><%= @character.location.name %></dd>
+</dl>

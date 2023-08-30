@@ -1,0 +1,27 @@
+<h1>Locations Index</h1>
+
+<ul>
+
+  <% @locations.each do |location| %>
+
+    <li>
+      <%= location.name %>
+      -
+      <%= location.book %>
+
+      <ul>
+      
+        <% location.characters.each do |character| %>
+
+          <li>
+            <%= link_to character.name, character_path(character) %>
+          </li>
+
+        <% end %>
+
+      </ul>
+    </li>
+
+  <% end %>
+
+</ul>
