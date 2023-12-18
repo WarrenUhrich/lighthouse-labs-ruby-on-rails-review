@@ -1,24 +1,37 @@
-# README
+# Lighthouse Labs | Ruby on Rails Review
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* [ ] Rails - How is it so far?
+* [ ] MVC Review
+* [ ] Building an App Prototype
 
-Things you may want to cover:
+## How has Ruby been treating ya'?
 
-* Ruby version
+* Different!
+* Easier to learn than maybe we thought it would be...
+    * Brain might not like it as much JS!
+* Can see how it is useful, not clicking quite as much yet!
 
-* System dependencies
+## How is Ruby on Rails so far?
 
-* Configuration
+* A bit confusing to keep track of things...!
+* I like MVC!
+* Can be a lot faster to develop with!
 
-* Database creation
+## Ruby (1995)
 
-* Database initialization
+* Developer friendly general-purpose programming language
+* Meant to read a lot more like English than many other programming languages
 
-* How to run the test suite
+## Ruby on Rails (2005)
 
-* Services (job queues, cache servers, search engines, etc.)
+* Convention over Configuration
+* MVC Model
+* A better developer experience (do more with less)
+* A rapid development cycle
+* ORM - Object Relational Mapper - ActiveRecord
+* Other MVC frameworks were inspired by Rails:
+    * C# - .NET Core MVC Framework
+    * PHP - Laravel
+    * Python - Django
 
-* Deployment instructions
-
-* ...
+## An Application Prototype
