@@ -1,6 +1,6 @@
 require "test_helper"
 
-class LocationsControllerTest < ActionDispatch::IntegrationTest
+class QuoteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

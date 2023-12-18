@@ -1,0 +1,17 @@
+<h1><%= @character.name %></h1>
+
+<nav><%= link_to 'Back to All Characters', characters_path %></nav>
+
+<dl>
+    <dt>Name:</dt><dd><%= @character.name %></dd>
+    <dt>Address:</dt><dd><%= @character.address %></dd>
+    <dt>City:</dt><dd><%= @character.city %></dd>
+</dl>
+
+<h2>Quotes</h2>
+
+<ul>
+    <% @character.quotes.each do |quote| %>
+        <li><%= quote.text %></li>
+    <% end %>
+</ul>

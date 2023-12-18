@@ -1,3 +1,3 @@
 class Character < ApplicationRecord
-    belongs_to :location
+    has_many :quotes
 end

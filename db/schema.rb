@@ -10,21 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_06_153200) do
+ActiveRecord::Schema.define(version: 2023_12_18_184646) do
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.string "favourite_poem"
-    t.integer "location_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_characters_on_location_id"
+    t.string "address"
+    t.string "city"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "quotes", force: :cascade do |t|
+    t.string "text"
+    t.integer "character_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_quotes_on_character_id"
   end
 
-  add_foreign_key "characters", "locations"
+  add_foreign_key "quotes", "characters"
 end

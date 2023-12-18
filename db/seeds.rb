@@ -3,31 +3,27 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-puts "Generating Locations..."
-
-10.times do
-    Location.create(
-        name: Faker::Fantasy::Tolkien.location
-    )
-end
-
-puts "Locations are done generating."
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Generating Characters..."
-
-locations = Location.all
-
-50.times do
-    Character.create(
-        name: Faker::Fantasy::Tolkien.character,
-        favourite_poem: Faker::Fantasy::Tolkien.poem,
-        location: locations.sample
-    )
+10.times do
+    Character.create({
+        name: Faker::TvShows::BrooklynNineNine.character,
+        address: Faker::Address.full_address,
+        city: Faker::Address.city
+    })
 end
+puts "Characters created!"
 
-puts "Done character generation."
+puts "Generating Quotes..."
+all_characters = Character.all
+30.times do
+    Quote.create({
+        text: Faker::TvShows::BrooklynNineNine.quote,
+        character: all_characters.sample
+    })
+end
+puts "Quotes created!"
 
-puts "Done seeding."
+puts "Seeding Complete!"
