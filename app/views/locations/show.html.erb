@@ -1,0 +1,17 @@
+<h1>Location: <%= @location.name %></h1>
+
+<nav>
+    <%= link_to 'All Locations', locations_path %>
+</nav>
+
+<h2>List of Characters Currently at Location:</h2>
+
+<ul>
+
+    <% @location.characters.each do |character| %>
+
+        <li><%= character.name %></li>
+
+    <% end %>
+
+</ul>
