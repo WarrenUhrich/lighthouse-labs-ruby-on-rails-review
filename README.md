@@ -1,6 +1,6 @@
 # Lighthouse Labs | Ruby on Rails Review
 
-[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2024.03.11-web-immersive-east-a-8january2024) | [Vimeo Video Recording (Coming Soon!)](#coming-soon) | [Supporting PDF Document](https://raw.githubusercontent.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/3bf0ea8886d11f2ba50f69ea31bb324c3cf019b4/Ruby%20on%20Rails%20Review.pdf)
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2024.03.11-web-immersive-east-a-8january2024) | [Vimeo Video Recording](https://vimeo.com/922123616/7ee45bde22?share=copy) | [Supporting PDF Document](https://raw.githubusercontent.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/3bf0ea8886d11f2ba50f69ea31bb324c3cf019b4/Ruby%20on%20Rails%20Review.pdf)
 
 * [X] Rails - How is it so far?
 * [X] MVC Review
