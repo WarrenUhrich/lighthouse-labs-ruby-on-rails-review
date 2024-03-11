@@ -1,0 +1,19 @@
+<h1><%= @location.name %></h1>
+
+<nav>
+    <%= link_to 'Click here to return to the Locations index.', locations_path %>
+</nav>
+
+<h2>Characters at this Location:</h2>
+<ul>
+
+    <% @location.characters.each do |character| %>
+
+        <li>
+            <h3><%= character.name %></h3>
+            <p><%= character.quote %></p>
+        </li>
+
+    <% end %>
+
+</ul>

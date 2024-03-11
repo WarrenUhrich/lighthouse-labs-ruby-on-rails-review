@@ -1,0 +1,839 @@
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCharacters (20240311152752)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "characters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "quote" varchar, "location_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0b4b445641"
+FOREIGN KEY ("location_id")
+  REFERENCES "locations" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_characters_on_location_id" ON "characters" ("location_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240311152752"]]
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLocations (20240311152859)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240311152859"]]
+  [1m[36mTRANSACTION (26.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-03-11 15:36:27.695277"], ["updated_at", "2024-03-11 15:36:27.695277"]]
+  [1m[36mTRANSACTION (52.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.4ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cleveland's Deli"], ["created_at", "2024-03-11 15:59:53.158537"], ["updated_at", "2024-03-11 15:59:53.158537"]]
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cleveland's Deli"], ["created_at", "2024-03-11 15:59:53.190175"], ["updated_at", "2024-03-11 15:59:53.190175"]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Goldman's Pharmacy"], ["created_at", "2024-03-11 15:59:53.210111"], ["updated_at", "2024-03-11 15:59:53.210111"]]
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.9ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Happy-Go-Lucky Toy Factory"], ["created_at", "2024-03-11 15:59:53.230569"], ["updated_at", "2024-03-11 15:59:53.230569"]]
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Goldman's Pharmacy"], ["created_at", "2024-03-11 15:59:53.254713"], ["updated_at", "2024-03-11 15:59:53.254713"]]
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.4ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Drunken Clam"], ["created_at", "2024-03-11 15:59:53.275786"], ["updated_at", "2024-03-11 15:59:53.275786"]]
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Happy-Go-Lucky Toy Factory"], ["created_at", "2024-03-11 15:59:53.301082"], ["updated_at", "2024-03-11 15:59:53.301082"]]
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (1.2ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "James Woods High"], ["created_at", "2024-03-11 15:59:53.326881"], ["updated_at", "2024-03-11 15:59:53.326881"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jack's Joke Shop"], ["created_at", "2024-03-11 15:59:53.348240"], ["updated_at", "2024-03-11 15:59:53.348240"]]
+  [1m[36mTRANSACTION (21.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.4ms)[0m  [1m[32mINSERT INTO "locations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "James Woods High"], ["created_at", "2024-03-11 15:59:53.377560"], ["updated_at", "2024-03-11 15:59:53.377560"]]
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joe Swanson"], ["quote", "Isn’t ‘bribe’ just another word for ‘love’?"], ["location_id", 10], ["created_at", "2024-03-11 15:59:53.457875"], ["updated_at", "2024-03-11 15:59:53.457875"]]
+  [1m[36mTRANSACTION (20.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mort Goldman"], ["quote", "I’ve got an idea–an idea so smart that my head would explode if I even began to know what I’m talking about."], ["location_id", 7], ["created_at", "2024-03-11 15:59:53.485864"], ["updated_at", "2024-03-11 15:59:53.485864"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bonnie Swanson"], ["quote", "Joe, gag on my fat dauber."], ["location_id", 10], ["created_at", "2024-03-11 15:59:53.504986"], ["updated_at", "2024-03-11 15:59:53.504986"]]
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Barabara Pewterschmidt"], ["quote", "I’ve got an idea–an idea so smart that my head would explode if I even began to know what I’m talking about."], ["location_id", 3], ["created_at", "2024-03-11 15:59:53.529272"], ["updated_at", "2024-03-11 15:59:53.529272"]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Carl"], ["quote", "Isn’t ‘bribe’ just another word for ‘love’?"], ["location_id", 4], ["created_at", "2024-03-11 15:59:53.543937"], ["updated_at", "2024-03-11 15:59:53.543937"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.2ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tricia Takanawa"], ["quote", "Amazing. One second of a stranger's voice on a phone, and you've got full Bollywood."], ["location_id", 2], ["created_at", "2024-03-11 15:59:53.558997"], ["updated_at", "2024-03-11 15:59:53.558997"]]
+  [1m[36mTRANSACTION (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.2ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chris Griffin"], ["quote", "Hey, don't try to take this away from me. This is the only thing I've ever been good at. Well, this and timing my farts to a thunderstorm."], ["location_id", 1], ["created_at", "2024-03-11 15:59:53.575908"], ["updated_at", "2024-03-11 15:59:53.575908"]]
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Brian Griffin"], ["quote", "Isn’t ‘bribe’ just another word for ‘love’?"], ["location_id", 8], ["created_at", "2024-03-11 15:59:53.592052"], ["updated_at", "2024-03-11 15:59:53.592052"]]
+  [1m[36mTRANSACTION (28.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tricia Takanawa"], ["quote", "Amazing. One second of a stranger's voice on a phone, and you've got full Bollywood."], ["location_id", 7], ["created_at", "2024-03-11 15:59:53.627869"], ["updated_at", "2024-03-11 15:59:53.627869"]]
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fouad"], ["quote", "It’s Peanut Butter Jelly Time."], ["location_id", 7], ["created_at", "2024-03-11 15:59:53.652025"], ["updated_at", "2024-03-11 15:59:53.652025"]]
+  [1m[36mTRANSACTION (18.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mort Goldman"], ["quote", "You know, this is great guys. Drinking and eating garbage. I'm glad we all took a mental health day."], ["location_id", 4], ["created_at", "2024-03-11 15:59:53.679253"], ["updated_at", "2024-03-11 15:59:53.679253"]]
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.9ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bonnie Swanson"], ["quote", "Joe, gag on my fat dauber."], ["location_id", 1], ["created_at", "2024-03-11 15:59:53.699547"], ["updated_at", "2024-03-11 15:59:53.699547"]]
+  [1m[36mTRANSACTION (34.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joyce Kinney"], ["quote", "Hey, don't try to take this away from me. This is the only thing I've ever been good at. Well, this and timing my farts to a thunderstorm."], ["location_id", 7], ["created_at", "2024-03-11 15:59:53.744431"], ["updated_at", "2024-03-11 15:59:53.744431"]]
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bonnie Swanson"], ["quote", "I am so not competitive. In fact, I am the least non-competitive. So I win."], ["location_id", 8], ["created_at", "2024-03-11 15:59:53.764865"], ["updated_at", "2024-03-11 15:59:53.764865"]]
+  [1m[36mTRANSACTION (19.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Diane Simmons"], ["quote", "Joe, gag on my fat dauber."], ["location_id", 8], ["created_at", "2024-03-11 15:59:53.793534"], ["updated_at", "2024-03-11 15:59:53.793534"]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bonnie Swanson"], ["quote", "Joe, gag on my fat dauber."], ["location_id", 3], ["created_at", "2024-03-11 15:59:53.816276"], ["updated_at", "2024-03-11 15:59:53.816276"]]
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Principal Shephard"], ["quote", "I am so not competitive. In fact, I am the least non-competitive. So I win."], ["location_id", 6], ["created_at", "2024-03-11 15:59:53.841731"], ["updated_at", "2024-03-11 15:59:53.841731"]]
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.8ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Barabara Pewterschmidt"], ["quote", "People in love can overcome anything."], ["location_id", 4], ["created_at", "2024-03-11 15:59:53.862632"], ["updated_at", "2024-03-11 15:59:53.862632"]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ollie Williams"], ["quote", "It’s Peanut Butter Jelly Time."], ["location_id", 9], ["created_at", "2024-03-11 15:59:53.891590"], ["updated_at", "2024-03-11 15:59:53.891590"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chris Griffin"], ["quote", "It’s Peanut Butter Jelly Time."], ["location_id", 10], ["created_at", "2024-03-11 15:59:53.912177"], ["updated_at", "2024-03-11 15:59:53.912177"]]
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Horace"], ["quote", "Isn’t ‘bribe’ just another word for ‘love’?"], ["location_id", 1], ["created_at", "2024-03-11 15:59:53.939913"], ["updated_at", "2024-03-11 15:59:53.939913"]]
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tom Tucker"], ["quote", "People in love can overcome anything."], ["location_id", 4], ["created_at", "2024-03-11 15:59:53.958660"], ["updated_at", "2024-03-11 15:59:53.958660"]]
+  [1m[36mTRANSACTION (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tom Tucker"], ["quote", "A degenerate, am I? Well, you are a festisio! See? I can make up words too, sister."], ["location_id", 6], ["created_at", "2024-03-11 15:59:53.984693"], ["updated_at", "2024-03-11 15:59:53.984693"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Evil Monkey"], ["quote", "Amazing. One second of a stranger's voice on a phone, and you've got full Bollywood."], ["location_id", 8], ["created_at", "2024-03-11 15:59:54.001568"], ["updated_at", "2024-03-11 15:59:54.001568"]]
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Principal Shephard"], ["quote", "People in love can overcome anything."], ["location_id", 5], ["created_at", "2024-03-11 15:59:54.040686"], ["updated_at", "2024-03-11 15:59:54.040686"]]
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Glenn Quagmire"], ["quote", "It’s Peanut Butter Jelly Time."], ["location_id", 6], ["created_at", "2024-03-11 15:59:54.084725"], ["updated_at", "2024-03-11 15:59:54.084725"]]
+  [1m[36mTRANSACTION (20.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Karen Griffin"], ["quote", "Hey, don't try to take this away from me. This is the only thing I've ever been good at. Well, this and timing my farts to a thunderstorm."], ["location_id", 5], ["created_at", "2024-03-11 15:59:54.115586"], ["updated_at", "2024-03-11 15:59:54.115586"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Mickey McFinnigan"], ["quote", "Isn’t ‘bribe’ just another word for ‘love’?"], ["location_id", 10], ["created_at", "2024-03-11 15:59:54.136561"], ["updated_at", "2024-03-11 15:59:54.136561"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thelma Griffin"], ["quote", "I am so not competitive. In fact, I am the least non-competitive. So I win."], ["location_id", 8], ["created_at", "2024-03-11 15:59:54.156153"], ["updated_at", "2024-03-11 15:59:54.156153"]]
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacter Create (0.6ms)[0m  [1m[32mINSERT INTO "characters" ("name", "quote", "location_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Diane Simmons"], ["quote", "People in love can overcome anything."], ["location_id", 4], ["created_at", "2024-03-11 15:59:54.182801"], ["updated_at", "2024-03-11 15:59:54.182801"]]
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters"[0m
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 7]]
+Started GET "/" for 127.0.0.1 at 2024-03-11 10:07:43 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/developer/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/developer/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-6.1.7.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.5ms | Allocations: 580)
+Completed 200 OK in 44ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 4385)
+
+
+Started GET "/lksdjflkdsjfdklsfjlksdfklsd" for 127.0.0.1 at 2024-03-11 10:08:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/lksdjflkdsjfdklsfjlksdfklsd"):
+  
+Started GET "/lksdjflkdsjfdklsfjlksdfklsd" for 127.0.0.1 at 2024-03-11 10:09:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/lksdjflkdsjfdklsfjlksdfklsd"):
+  
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:10:57 -0600
+  
+ActionController::RoutingError (uninitialized constant LocationsController
+
+        Object.const_get(camel_cased_word)
+              ^^^^^^^^^^
+Did you mean?  ActionController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/lksdjflkdsjfdklsfjlksdfklsd" for 127.0.0.1 at 2024-03-11 10:11:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/lksdjflkdsjfdklsfjlksdfklsd"):
+  
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:12:06 -0600
+  
+ActionController::RoutingError (uninitialized constant LocationsController
+
+        Object.const_get(camel_cased_word)
+              ^^^^^^^^^^
+Did you mean?  ActionController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:13:40 -0600
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for LocationsController):
+  
+actionpack (6.1.7.7) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.7.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.8.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.8.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8.1) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.8.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.7) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.7) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:14:22 -0600
+Processing by LocationsController#index as HTML
+Completed 406 Not Acceptable in 4ms (Allocations: 1972)
+
+
+  
+ActionController::MissingExactTemplate (LocationsController#index is missing a template for request formats: text/html):
+  
+actionpack (6.1.7.7) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.7.7) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (6.1.7.7) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.7.7) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.7.7) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.7.7) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.7.7) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7.7) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.7) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.7) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.7) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.7) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.7) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.7) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.7) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.7) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.7) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.7) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.7) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.7) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.8.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.8.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8.1) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.8.1) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8.1) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.7) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8.1) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.8.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.7) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.7) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.7) lib/rails/engine.rb:539:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:15:30 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 144)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+Require stack:
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack/bin/webpack.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:815:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:667:27)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js:1:87)
+    at Module._compile (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js:3:21)
+    at Module._compile (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:71:45
+    at Object.parse (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/yargs/yargs.js:576:18)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack/bin/webpack.js'
+  ]
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 1949.4ms | Allocations: 14844)
+Completed 500 Internal Server Error in 1954ms (Allocations: 16075)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/developer/projects/lighthouse-labs-ruby-on-rails-review/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:15:53 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 335)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:93
+				throw err;
+				^
+
+Error: Cannot find module '@rails/webpacker'
+Require stack:
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js
+- /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack/bin/webpack.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:815:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:667:27)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js:1:87)
+    at Module._compile (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js:3:21)
+    at Module._compile (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:192:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at WEBPACK_OPTIONS (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:114:13)
+    at requireConfig (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:116:6)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:123:17
+    at Array.forEach (<anonymous>)
+    at module.exports (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js:121:15)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:71:45
+    at Object.parse (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/yargs/yargs.js:576:18)
+    at /home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:49:8
+    at Object.<anonymous> (/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js:366:3)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/environment.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/config/webpack/development.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/utils/convert-argv.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack-cli/bin/cli.js',
+    '/home/developer/projects/lighthouse-labs-ruby-on-rails-review/node_modules/webpack/bin/webpack.js'
+  ]
+}
+
+  Rendered layout layouts/application.html.erb (Duration: 1435.5ms | Allocations: 7728)
+Completed 500 Internal Server Error in 1462ms (ActiveRecord: 0.0ms | Allocations: 10857)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/developer/projects/lighthouse-labs-ruby-on-rails-review/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:16:13 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 142)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 1348)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2583)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= # javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>Myapp</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:    
+9:        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+10:        <%= # javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+11:      </head>
+12:    
+13:      <body>
+14:        <%= yield %>
+15:      </body>
+16:    </html>
+  
+app/views/layouts/application.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:15: unknown regexp options - bdy
+app/views/layouts/application.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:19: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:15: unknown regexp options - bdy
+app/views/layouts/application.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:19: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:15: unknown regexp options - bdy
+app/views/layouts/application.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:19: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+app/views/layouts/application.html.erb:11: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:15: unknown regexp options - bdy
+app/views/layouts/application.html.erb:16: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:19: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:16:29 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 1936)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 3238)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:19:52 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/locations/index.html.erb:4
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 4490)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 6256)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 0.9ms | Allocations: 9485)
+
+
+Started GET "/sdfjsdfjsdklfjsdklf" for 127.0.0.1 at 2024-03-11 10:21:19 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/sdfjsdfjsdklfjsdklf"):
+  
+Started GET "/locations/3" for 127.0.0.1 at 2024-03-11 10:22:18 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 1929)
+Completed 200 OK in 20ms (Views: 18.2ms | Allocations: 3373)
+
+
+Started GET "/locations/3" for 127.0.0.1 at 2024-03-11 10:24:25 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 172)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1947)
+Completed 200 OK in 40ms (Views: 8.9ms | ActiveRecord: 2.0ms | Allocations: 8874)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2024-03-11 10:24:30 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  Rendered locations/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 1450)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 2546)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2024-03-11 10:27:46 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/views/locations/show.html.erb:6
+  Rendered locations/show.html.erb within layouts/application (Duration: 50.9ms | Allocations: 10542)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 12346)
+Completed 200 OK in 62ms (Views: 56.9ms | ActiveRecord: 1.2ms | Allocations: 14182)
+
+
+Started GET "/locations/5" for 127.0.0.1 at 2024-03-11 10:27:57 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 5]]
+  ↳ app/views/locations/show.html.erb:6
+  Rendered locations/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 911)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 2323)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.4ms | Allocations: 3440)
+
+
+Started GET "/locations/3" for 127.0.0.1 at 2024-03-11 10:28:04 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 3]]
+  ↳ app/views/locations/show.html.erb:6
+  Rendered locations/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 864)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 2278)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 3249)
+
+
+Started GET "/locations/8" for 127.0.0.1 at 2024-03-11 10:28:07 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 8]]
+  ↳ app/views/locations/show.html.erb:6
+  Rendered locations/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2336)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 3288)
+
+
+Started GET "/lsdflsdkjfsdkljfsdklf" for 127.0.0.1 at 2024-03-11 10:29:50 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/lsdflsdkjfsdkljfsdklf"):
+  
+Started GET "/locations/8" for 127.0.0.1 at 2024-03-11 10:30:39 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 8]]
+  ↳ app/views/locations/show.html.erb:10
+  Rendered locations/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3164)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 1.3ms | Allocations: 4985)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:30:42 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1026)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2445)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 3023)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:32:07 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1457)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3210)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms | Allocations: 4480)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2024-03-11 10:32:26 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/views/locations/show.html.erb:10
+  Rendered locations/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2555)
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 0.5ms | Allocations: 3718)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:32:28 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2528)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 2924)
+
+
+Started GET "/locations/4" for 127.0.0.1 at 2024-03-11 10:32:29 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 4]]
+  ↳ app/views/locations/show.html.erb:10
+  Rendered locations/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 962)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2372)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 3324)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:32:33 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 2528)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 2923)
+
+
+Started GET "/locations/10" for 127.0.0.1 at 2024-03-11 10:32:35 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 10]]
+  ↳ app/views/locations/show.html.erb:10
+  Rendered locations/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 941)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 2351)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 3303)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:32:38 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 2528)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.2ms | Allocations: 2923)
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2024-03-11 10:32:40 -0600
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering locations/show.html.erb within layouts/application
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."location_id" = ?[0m  [["location_id", 1]]
+  ↳ app/views/locations/show.html.erb:10
+  Rendered locations/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 2330)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 3282)
+
+
+Started GET "/locations" for 127.0.0.1 at 2024-03-11 10:32:42 -0600
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/views/locations/index.html.erb:4
+  Rendered locations/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 2528)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.2ms | Allocations: 2923)
+
+
