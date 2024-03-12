@@ -1,8 +1,10 @@
 # Lighthouse Labs | Rails Review
 
-* [ ] Rails - How is it so far?
-* [ ] MVC Review
-* [ ] Building an App Prototype
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-ruby-on-rails-review/tree/2024.03.12-web-flex-day-18september2023) | [Vimeo Video Recording](https://vimeo.com/922643862/3bfe7b19e3?share=copy)
+
+* [X] Rails - How is it so far?
+* [X] MVC Review
+* [X] Building an App Prototype
 
 ## How are we feeling about Ruby so far? ( How did you feel about NodeJS? )
 
