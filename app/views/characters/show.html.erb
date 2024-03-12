@@ -1,0 +1,16 @@
+<h1><%= @character.name %></h1>
+
+<nav>
+    <!-- <a href="/characters"></a> -->
+    <%= link_to 'Return to list of all characters.', characters_path %>
+</nav>
+
+<ul>
+    <% @character.quotes.each do |quote| %>
+
+        <li>
+            <%= quote.text %>
+        </li>
+
+    <% end %>
+</ul>
